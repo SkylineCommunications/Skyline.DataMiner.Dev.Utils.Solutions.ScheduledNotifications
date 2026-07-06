@@ -3,12 +3,12 @@
     <TargetFramework>net48</TargetFramework>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>disable</Nullable>
-    <AssemblyName>Skyline.DataMiner.Utils.ScheduledNotifications</AssemblyName>
-    <RootNamespace>Skyline.DataMiner.Utils.ScheduledNotifications</RootNamespace>
-	 <PackageId>Skyline.DataMiner.Dev.Utils.ScheduledNotifications</PackageId>
+    <AssemblyName>Skyline.DataMiner.Utils.Solutions.ScheduledNotifications</AssemblyName>
+    <RootNamespace>Skyline.DataMiner.Utils.Solutions.ScheduledNotifications</RootNamespace>
+	 <PackageId>Skyline.DataMiner.Dev.Utils.Solutions.ScheduledNotifications</PackageId>
 	 <PackageVersion>1.0.0</PackageVersion>
     <Version>1.0.0</Version>
-    <PackageTags>Skyline;DataMiner;ScheduledNotifications</PackageTags>
+    <PackageTags>Skyline;DataMiner</PackageTags>
     <PackageProjectUrl>https://skyline.be</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
@@ -18,7 +18,7 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Authors>SkylineCommunications</Authors>
     <Company>Skyline Communications</Company>
-    <Description>DevPack for scheduled notifications.</Description>
+    <Description>Provides an internal API for scheduled notifications.</Description>
   </PropertyGroup>
 
   <ItemGroup>

@@ -3,8 +3,8 @@
     <TargetFramework>net48</TargetFramework>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>disable</Nullable>
-    <AssemblyName>Skyline.DataMiner.Utils.Solutions.ScheduledNotifications</AssemblyName>
-    <RootNamespace>Skyline.DataMiner.Utils.Solutions.ScheduledNotifications</RootNamespace>
+    <AssemblyName>Skyline.DataMiner.Dev.Utils.Solutions.ScheduledNotifications</AssemblyName>
+    <RootNamespace>Skyline.DataMiner.Dev.Utils.Solutions.ScheduledNotifications</RootNamespace>
 	 <PackageId>Skyline.DataMiner.Dev.Utils.Solutions.ScheduledNotifications</PackageId>
 	 <PackageVersion>1.0.0</PackageVersion>
     <Version>1.0.0</Version>

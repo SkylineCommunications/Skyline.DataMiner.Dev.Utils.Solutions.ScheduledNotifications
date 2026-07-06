@@ -6,9 +6,9 @@
     <AssemblyName>Skyline.DataMiner.Utils.ScheduledNotifications</AssemblyName>
     <RootNamespace>Skyline.DataMiner.Utils.ScheduledNotifications</RootNamespace>
 	 <PackageId>Skyline.DataMiner.Dev.Utils.ScheduledNotifications</PackageId>
-	 <PackageVersion>1.0.2</PackageVersion>
-    <Version>1.0.2</Version>
-    <PackageTags>Skyline;DataMiner</PackageTags>
+	 <PackageVersion>1.0.1</PackageVersion>
+    <Version>1.0.1</Version>
+    <PackageTags>Skyline;DataMiner;ScheduledNotifications</PackageTags>
     <PackageProjectUrl>https://skyline.be</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
@@ -18,7 +18,7 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Authors>SkylineCommunications</Authors>
     <Company>Skyline Communications</Company>
-    <Description></Description>
+    <Description>DevPack for scheduled notifications.</Description>
   </PropertyGroup>
 
   <ItemGroup>

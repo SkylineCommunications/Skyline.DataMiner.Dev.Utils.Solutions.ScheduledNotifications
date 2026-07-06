@@ -1,0 +1,29 @@
+name: Master Workflow
+
+on:
+  push:
+    branches:
+      - '**'
+    tags:
+      - "[0-9]+.[0-9]+.[0-9]+.[0-9]+"
+      - "[0-9]+.[0-9]+.[0-9]+.[0-9]+-**"
+      - "[0-9]+.[0-9]+.[0-9]+"
+      - "[0-9]+.[0-9]+.[0-9]+-**"
+
+  workflow_dispatch:
+
+jobs:
+
+  CI:
+    uses: SkylineCommunications/_ReusableWorkflows/.github/workflows/Master Workflow.yml@main
+    with:
+      # sonarcloud-project-name is optional. Provide it to enable SonarCloud analysis.
+      sonarcloud-project-name: ${{ vars.SONAR_NAME }}
+      # configuration: Release
+      # solution-filter-name: "MySpecificSolution.slnx"
+      # override-catalog-identifiers: |
+      #   PackageA.Install/CatalogInformation/manifest.yml=11111111-1111-1111-1111-111111111111
+    secrets:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      DATAMINER_TOKEN: ${{ secrets.DATAMINER_TOKEN }}
+      # NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}

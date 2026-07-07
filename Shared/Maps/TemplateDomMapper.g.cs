@@ -3,7 +3,7 @@ using Skyline.DataMiner.Net.Apps.DataMinerObjectModel;
 using Skyline.DataMiner.Net.Sections;
 using Skyline.DataMiner.SDM;
 
-namespace Skyline.DataMiner.Dev.Utils.Solutions.ScheduledNotifications.Models
+namespace Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models
 {
     [SdmDomMapper]
     public static class TemplateDomMapper

@@ -1,4 +1,4 @@
-﻿namespace Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models
+﻿namespace Skyline.DataMiner.Utils.ScheduledNotifications.Models
 {
 	using Skyline.DataMiner.SDM;
 

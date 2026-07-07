@@ -1,4 +1,4 @@
-﻿namespace Skyline.DataMiner.Utils.ScheduledNotifications.ApiHelpers
+﻿namespace Skyline.DataMiner.Dev.Utils.Solutions.ScheduledNotifications.ApiHelpers.ScheduledNotifications
 {
 	using System;
 
@@ -6,7 +6,7 @@
 	using Skyline.DataMiner.SDM;
 	using Skyline.DataMiner.Utils.ScheduledNotifications.Models;
 
-	using ScheduledNotificationDomRepository = Repositories.ScheduledNotificationDomRepository;
+	using ScheduledNotificationDomRepository = DataMiner.Utils.ScheduledNotifications.Repositories.ScheduledNotificationDomRepository;
 
 	/// <summary>
 	/// Helper class for interacting with ScheduledNotifications in DataMiner.

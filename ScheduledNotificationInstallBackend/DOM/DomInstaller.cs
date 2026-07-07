@@ -3,6 +3,7 @@
 	using System;
 	using System.Linq;
 
+	using Skyline.DataMiner.Dev.Utils.Solutions.ScheduledNotifications.Models;
 	using Skyline.DataMiner.Net;
 	using Skyline.DataMiner.Net.Apps.DataMinerObjectModel;
 	using Skyline.DataMiner.Net.Apps.Modules;
@@ -112,9 +113,63 @@
 					.WithType(typeof(DateTime))
 					.WithIsOptional(false)
 					.WithTooltip("The start time of the notification."))
+				.AddFieldDescriptor(new FieldDescriptorBuilder()
+					.WithID(ScheduledNotificationDomMapper.ScheduledNotificationProperties.OriginSolution)
+					.WithName(nameof(ScheduledNotificationDomMapper.ScheduledNotificationProperties.OriginSolution))
+					.WithType(typeof(string))
+					.WithIsOptional(false)
+					.WithTooltip("The Origin Solution of the notification."))
+				.AddFieldDescriptor(new FieldDescriptorBuilder()
+					.WithID(ScheduledNotificationDomMapper.ScheduledNotificationProperties.Status)
+					.WithName(nameof(ScheduledNotificationDomMapper.ScheduledNotificationProperties.Status))
+					.WithType(typeof(bool))
+					.WithIsOptional(false)
+					.WithTooltip("Indicates whether the notification is enabled or disabled."))
+				.AddFieldDescriptor(new DomInstanceFieldDescriptorBuilder()
+					.WithID(ScheduledNotificationDomMapper.ScheduledNotificationProperties.TemplateId)
+					.WithName(nameof(ScheduledNotificationDomMapper.ScheduledNotificationProperties.TemplateId))
+					.WithType(typeof(Guid))
+					.WithIsOptional(true)
+					.WithModule(TemplateDomMapper.ModuleId)
+					.WithDefinitions(new[] { TemplateDomMapper.DomDefinitionId })
+					.WithTooltip("The template identifier associated with the notification."))
 				.Build();
 
 			Import(helper.SectionDefinitions, SectionDefinitionExposers.ID.Equal(ScheduledNotificationDomMapper.ScheduledNotificationProperties.SectionDefinitionId.Id), section);
+		}
+
+		private void InstallTemplateSection(DomHelper helper)
+		{
+			var section = new SectionDefinitionBuilder()
+				.WithID(TemplateDomMapper.TemplateProperties.SectionDefinitionId)
+				.WithName("Template")
+				.AddFieldDescriptor(new FieldDescriptorBuilder()
+					.WithID(TemplateDomMapper.TemplateProperties.Name)
+					.WithName(nameof(TemplateDomMapper.TemplateProperties.Name))
+					.WithType(typeof(string))
+					.WithIsOptional(false)
+					.WithTooltip("The name of the template."))
+				.AddFieldDescriptor(new FieldDescriptorBuilder()
+					.WithID(TemplateDomMapper.TemplateProperties.HtmlFilePath)
+					.WithName(nameof(TemplateDomMapper.TemplateProperties.HtmlFilePath))
+					.WithType(typeof(string))
+					.WithIsOptional(false)
+					.WithTooltip("The HTML file path of the template."))
+				.AddFieldDescriptor(new FieldDescriptorBuilder()
+					.WithID(TemplateDomMapper.TemplateProperties.OriginSolution)
+					.WithName(nameof(TemplateDomMapper.TemplateProperties.OriginSolution))
+					.WithIsOptional(false)
+					.WithType(typeof(string))
+					.WithTooltip("The origin solution of the template."))
+				.AddFieldDescriptor(new FieldDescriptorBuilder()
+					.WithID(TemplateDomMapper.TemplateProperties.ProcessingScriptName)
+					.WithName(nameof(TemplateDomMapper.TemplateProperties.ProcessingScriptName))
+					.WithIsOptional(false)
+					.WithType(typeof(string))
+					.WithTooltip("The processing script name of the template."))
+				.Build();
+
+			Import(helper.SectionDefinitions, SectionDefinitionExposers.ID.Equal(TemplateDomMapper.TemplateProperties.SectionDefinitionId.Id), section);
 		}
 
 		private void InstallScheduledNotificationDefinition(DomHelper helper)
@@ -134,10 +189,29 @@
 			Import(helper.DomDefinitions, DomDefinitionExposers.Id.Equal(ScheduledNotificationDomMapper.DomDefinitionId.Id), definition);
 		}
 
+		private void InstallTemplateDefinition(DomHelper helper)
+		{
+			var definition = new DomDefinitionBuilder()
+				.WithID(TemplateDomMapper.DomDefinitionId)
+				.WithName("Template")
+				.AddSectionDefinitionLink(new Skyline.DataMiner.Net.Apps.Sections.SectionDefinitions.SectionDefinitionLink
+				{
+					SectionDefinitionID = TemplateDomMapper.TemplateProperties.SectionDefinitionId,
+					AllowMultipleSections = false,
+					IsOptional = false,
+					IsSoftDeleted = false,
+				})
+				.Build();
+
+			Import(helper.DomDefinitions, DomDefinitionExposers.Id.Equal(TemplateDomMapper.DomDefinitionId.Id), definition);
+		}
+
 		private void InstallScheduledNotification(DomHelper helper)
 		{
 			InstallNotificationSection(helper);
+			InstallTemplateSection(helper);
 			InstallScheduledNotificationDefinition(helper);
+			InstallTemplateDefinition(helper);
 		}
 	}
 }

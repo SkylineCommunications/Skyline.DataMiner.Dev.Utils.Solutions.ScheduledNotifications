@@ -14,5 +14,4 @@
 			return new ScheduledNotificationDomRepository_Middleware(repository, middleware);
 		}
 	}
-
 }

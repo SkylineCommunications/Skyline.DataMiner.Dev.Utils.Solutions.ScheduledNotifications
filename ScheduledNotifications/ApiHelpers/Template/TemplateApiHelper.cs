@@ -1,4 +1,4 @@
-﻿namespace Skyline.DataMiner.Utils.ScheduledNotifications.ApiHelpers.Template
+﻿namespace Skyline.DataMiner.Utils.ScheduledNotifications.ApiHelpers
 {
 	using System;
 

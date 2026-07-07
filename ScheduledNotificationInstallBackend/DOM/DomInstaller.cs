@@ -3,7 +3,6 @@
 	using System;
 	using System.Linq;
 
-	using Skyline.DataMiner.Dev.Utils.Solutions.ScheduledNotifications.Models;
 	using Skyline.DataMiner.Net;
 	using Skyline.DataMiner.Net.Apps.DataMinerObjectModel;
 	using Skyline.DataMiner.Net.Apps.Modules;
@@ -13,6 +12,7 @@
 	using Skyline.DataMiner.Net.Sections;
 	using Skyline.DataMiner.Utils.DOM.Builders;
 	using Skyline.DataMiner.Utils.ScheduledNotifications.Models;
+	using Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models;
 
 	public partial class DomInstaller
 	{

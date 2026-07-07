@@ -10,5 +10,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Maps\ScheduledNotificationDomMapper.g.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Maps\TemplateDomMapper.g.cs" />
   </ItemGroup>
 </Project>

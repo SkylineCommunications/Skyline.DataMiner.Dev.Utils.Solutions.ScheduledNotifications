@@ -19,7 +19,7 @@
 	/// Represents a scheduled notification.
 	/// </summary>
 	[GenerateExposers]
-	[SdmDomStorage("schedulednotification")]
+	[SdmDomStorage("(slc)schedulednotification")]
 	public class ScheduledNotification : SdmObject<ScheduledNotification>
 	{
 		/// <summary>
@@ -41,5 +41,20 @@
 		/// Gets or sets the start time of the notification.
 		/// </summary>
 		public DateTime StartTime { get; set; }
+
+		/// <summary>
+		/// Gets or sets the origin solution of the notification.
+		/// </summary>
+		public string OriginSolution { get; set; }
+
+		/// <summary>
+		/// Gets or sets a value indicating whether the notification is enabled or disabled.
+		/// </summary>
+		public bool Status { get; set; }
+
+		/// <summary>
+		/// Gets or sets the template identifier associated with the notification.
+		/// </summary>
+		public Guid TemplateId { get; set; } = Guid.Empty;
 	}
 }

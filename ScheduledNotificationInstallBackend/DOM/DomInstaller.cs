@@ -12,7 +12,6 @@
 	using Skyline.DataMiner.Net.Sections;
 	using Skyline.DataMiner.Utils.DOM.Builders;
 	using Skyline.DataMiner.Utils.ScheduledNotifications.Models;
-	using Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models;
 
 	public partial class DomInstaller
 	{

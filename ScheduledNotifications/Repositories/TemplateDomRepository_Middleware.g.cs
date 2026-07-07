@@ -4,31 +4,31 @@
 //     Changes to this file will be lost if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Repositories
+namespace Skyline.DataMiner.Utils.ScheduledNotifications.Repositories
 {
 	using Skyline.DataMiner.Net.Messages.SLDataGateway;
 	using Skyline.DataMiner.SDM;
-	using Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models;
+	using Skyline.DataMiner.Utils.ScheduledNotifications.Models;
 
 	using SLDataGateway.API.Types.Querying;
 
 	using System;
 	using System.Collections.Generic;
 
-	internal sealed partial class TemplateDomRepository_Middleware : Skyline.DataMiner.SDM.IBulkRepository<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template>
+	internal sealed partial class TemplateDomRepository_Middleware : Skyline.DataMiner.SDM.IBulkRepository<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template>
 	{
-		private readonly Skyline.DataMiner.SDM.IBulkRepository<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template> _inner;
-		private readonly IMiddlewareMarker<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template> _middleware;
+		private readonly Skyline.DataMiner.SDM.IBulkRepository<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template> _inner;
+		private readonly IMiddlewareMarker<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template> _middleware;
 
-		public TemplateDomRepository_Middleware(Skyline.DataMiner.SDM.IBulkRepository<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template> inner, IMiddlewareMarker<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template> middleware)
+		public TemplateDomRepository_Middleware(Skyline.DataMiner.SDM.IBulkRepository<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template> inner, IMiddlewareMarker<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template> middleware)
 		{
 			_inner = inner ?? throw new ArgumentNullException(nameof(inner));
 			_middleware = middleware;
 		}
 
-		public IEnumerable<IPagedResult<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template>> ReadPaged(FilterElement<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template> filter)
+		public IEnumerable<IPagedResult<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template>> ReadPaged(FilterElement<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template> filter)
 		{
-			if (_middleware is IPageableMiddleware<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template> middleware)
+			if (_middleware is IPageableMiddleware<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template> middleware)
 			{
 				return middleware.OnReadPaged(filter, _inner.ReadPaged);
 			}
@@ -38,9 +38,9 @@ namespace Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Repositories
 			}
 		}
 
-		public IEnumerable<IPagedResult<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template>> ReadPaged(IQuery<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template> query)
+		public IEnumerable<IPagedResult<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template>> ReadPaged(IQuery<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template> query)
 		{
-			if (_middleware is IPageableMiddleware<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template> middleware)
+			if (_middleware is IPageableMiddleware<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template> middleware)
 			{
 				return middleware.OnReadPaged(query, _inner.ReadPaged);
 			}
@@ -50,9 +50,9 @@ namespace Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Repositories
 			}
 		}
 
-		public IEnumerable<IPagedResult<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template>> ReadPaged(FilterElement<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template> filter, int pageSize)
+		public IEnumerable<IPagedResult<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template>> ReadPaged(FilterElement<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template> filter, int pageSize)
 		{
-			if (_middleware is IPageableMiddleware<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template> middleware)
+			if (_middleware is IPageableMiddleware<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template> middleware)
 			{
 				return middleware.OnReadPaged(filter, pageSize, _inner.ReadPaged);
 			}
@@ -62,9 +62,9 @@ namespace Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Repositories
 			}
 		}
 
-		public IEnumerable<IPagedResult<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template>> ReadPaged(IQuery<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template> query, int pageSize)
+		public IEnumerable<IPagedResult<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template>> ReadPaged(IQuery<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template> query, int pageSize)
 		{
-			if (_middleware is IPageableMiddleware<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template> middleware)
+			if (_middleware is IPageableMiddleware<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template> middleware)
 			{
 				return middleware.OnReadPaged(query, pageSize, _inner.ReadPaged);
 			}
@@ -74,9 +74,9 @@ namespace Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Repositories
 			}
 		}
 
-		public IEnumerable<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template> Read(FilterElement<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template> filter)
+		public IEnumerable<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template> Read(FilterElement<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template> filter)
 		{
-			if (_middleware is IReadableMiddleware<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template> middleware)
+			if (_middleware is IReadableMiddleware<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template> middleware)
 			{
 				return middleware.OnRead(filter, _inner.Read);
 			}
@@ -86,9 +86,9 @@ namespace Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Repositories
 			}
 		}
 
-		public IEnumerable<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template> Read(IQuery<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template> query)
+		public IEnumerable<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template> Read(IQuery<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template> query)
 		{
-			if (_middleware is IReadableMiddleware<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template> middleware)
+			if (_middleware is IReadableMiddleware<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template> middleware)
 			{
 				return middleware.OnRead(query, _inner.Read);
 			}
@@ -98,9 +98,9 @@ namespace Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Repositories
 			}
 		}
 
-		public long Count(FilterElement<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template> filter)
+		public long Count(FilterElement<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template> filter)
 		{
-			if (_middleware is ICountableMiddleware<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template> middleware)
+			if (_middleware is ICountableMiddleware<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template> middleware)
 			{
 				return middleware.OnCount(filter, _inner.Count);
 			}
@@ -110,9 +110,9 @@ namespace Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Repositories
 			}
 		}
 
-		public long Count(IQuery<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template> query)
+		public long Count(IQuery<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template> query)
 		{
-			if (_middleware is ICountableMiddleware<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template> middleware)
+			if (_middleware is ICountableMiddleware<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template> middleware)
 			{
 				return middleware.OnCount(query, _inner.Count);
 			}
@@ -122,9 +122,9 @@ namespace Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Repositories
 			}
 		}
 
-		public IReadOnlyCollection<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template> Create(IEnumerable<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template> oToCreate)
+		public IReadOnlyCollection<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template> Create(IEnumerable<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template> oToCreate)
 		{
-			if (_middleware is IBulkCreatableMiddleware<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template> middleware)
+			if (_middleware is IBulkCreatableMiddleware<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template> middleware)
 			{
 				return middleware.OnCreate(oToCreate, _inner.Create);
 			}
@@ -134,9 +134,9 @@ namespace Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Repositories
 			}
 		}
 
-		public Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template Create(Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template oToCreate)
+		public Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template Create(Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template oToCreate)
 		{
-			if (_middleware is ICreatableMiddleware<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template> middleware)
+			if (_middleware is ICreatableMiddleware<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template> middleware)
 			{
 				return middleware.OnCreate(oToCreate, _inner.Create);
 			}
@@ -146,9 +146,9 @@ namespace Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Repositories
 			}
 		}
 
-		public IReadOnlyCollection<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template> Update(IEnumerable<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template> oToUpdate)
+		public IReadOnlyCollection<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template> Update(IEnumerable<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template> oToUpdate)
 		{
-			if (_middleware is IBulkUpdatableMiddleware<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template> middleware)
+			if (_middleware is IBulkUpdatableMiddleware<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template> middleware)
 			{
 				return middleware.OnUpdate(oToUpdate, _inner.Update);
 			}
@@ -158,9 +158,9 @@ namespace Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Repositories
 			}
 		}
 
-		public Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template Update(Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template oToUpdate)
+		public Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template Update(Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template oToUpdate)
 		{
-			if (_middleware is IUpdatableMiddleware<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template> middleware)
+			if (_middleware is IUpdatableMiddleware<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template> middleware)
 			{
 				return middleware.OnUpdate(oToUpdate, _inner.Update);
 			}
@@ -170,9 +170,9 @@ namespace Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Repositories
 			}
 		}
 
-		public void Delete(IEnumerable<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template> oToDelete)
+		public void Delete(IEnumerable<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template> oToDelete)
 		{
-			if (_middleware is IBulkDeletableMiddleware<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template> middleware)
+			if (_middleware is IBulkDeletableMiddleware<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template> middleware)
 			{
 				middleware.OnDelete(oToDelete, _inner.Delete);
 			}
@@ -182,9 +182,9 @@ namespace Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Repositories
 			}
 		}
 
-		public void Delete(Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template oToDelete)
+		public void Delete(Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template oToDelete)
 		{
-			if (_middleware is IDeletableMiddleware<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template> middleware)
+			if (_middleware is IDeletableMiddleware<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template> middleware)
 			{
 				middleware.OnDelete(oToDelete, _inner.Delete);
 			}
@@ -193,7 +193,7 @@ namespace Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Repositories
 				_inner.Delete(oToDelete);
 			}
 		}
-		public System.Collections.Generic.IReadOnlyCollection<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template> CreateOrUpdate(System.Collections.Generic.IEnumerable<Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models.Template> oToCreateOrUpdate)
+		public System.Collections.Generic.IReadOnlyCollection<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template> CreateOrUpdate(System.Collections.Generic.IEnumerable<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template> oToCreateOrUpdate)
 		{
 			return _inner.CreateOrUpdate(oToCreateOrUpdate);
 		}

@@ -1,8 +1,8 @@
-﻿namespace Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.ApiHelpers.Template
+﻿namespace Skyline.DataMiner.Utils.ScheduledNotifications.ApiHelpers.Template
 {
 	using Skyline.DataMiner.Net;
 	using Skyline.DataMiner.SDM;
-	using Skyline.DataMiner.Utils.Solutions.ScheduledNotifications.Models;
+	using Skyline.DataMiner.Utils.ScheduledNotifications.Models;
 
 	public interface ITemplateApiHelper
 	{

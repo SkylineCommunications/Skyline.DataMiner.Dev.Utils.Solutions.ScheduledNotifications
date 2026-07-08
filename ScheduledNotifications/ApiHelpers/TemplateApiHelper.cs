@@ -6,6 +6,7 @@
 	using Skyline.DataMiner.SDM;
 	using Skyline.DataMiner.Utils.ScheduledNotifications.Models;
 
+	using TemplateDomRepository = DataMiner.Utils.ScheduledNotifications.Repositories.TemplateDomRepository;
 
 	/// <summary>
 	/// Helper class for interacting with ScheduledNotifications in DataMiner.

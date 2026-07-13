@@ -6,8 +6,8 @@
     <AssemblyName>Skyline.DataMiner.Dev.Utils.Solutions.ScheduledNotifications</AssemblyName>
     <RootNamespace>Skyline.DataMiner.Dev.Utils.Solutions.ScheduledNotifications</RootNamespace>
 	 <PackageId>Skyline.DataMiner.Dev.Utils.Solutions.ScheduledNotifications</PackageId>
-	 <PackageVersion>1.0.3-dashboard</PackageVersion>
-    <Version>1.0.3-dashboard</Version>
+	 <PackageVersion>1.0.4-refactored</PackageVersion>
+    <Version>1.0.4-refactored</Version>
     <PackageTags>Skyline;DataMiner</PackageTags>
     <PackageProjectUrl>https://skyline.be</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -38,10 +38,6 @@
     <PackageReference Include="Skyline.DataMiner.Utils.SecureCoding.Analyzers" Version="2.2.3">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-  </ItemGroup>
-  
-  <ItemGroup>
-    <Folder Include="Exposers\" />
   </ItemGroup>
 
 	<Import Project="..\Shared\Shared.projitems" Label="Shared" />

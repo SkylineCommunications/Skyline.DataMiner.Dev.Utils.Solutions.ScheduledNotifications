@@ -7,13 +7,15 @@
 	using Skyline.DataMiner.Utils.ScheduledNotifications.Models;
 
 	using ScheduledNotificationDomRepository = DataMiner.Utils.ScheduledNotifications.Repositories.ScheduledNotificationDomRepository;
+	using TemplateDomRepository = DataMiner.Utils.ScheduledNotifications.Repositories.TemplateDomRepository;
 
 	/// <summary>
 	/// Helper class for interacting with ScheduledNotifications in DataMiner.
 	/// </summary>
 	public class ScheduledNotificationApiHelper
 	{
-		private readonly IBulkRepository<ScheduledNotification> _ScheduledNotifications;
+		private readonly IBulkRepository<ScheduledNotification> _scheduledNotifications;
+		private readonly IBulkRepository<Template> _templates;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ScheduledNotificationApiHelper"/> class.
@@ -24,7 +26,8 @@
 		{
 			Connection = connection;
 
-			_ScheduledNotifications = new ScheduledNotificationDomRepository(connection);
+			_scheduledNotifications = new ScheduledNotificationDomRepository(connection);
+			_templates = new TemplateDomRepository(connection);
 		}
 
 		/// <summary>
@@ -35,6 +38,8 @@
 		/// <summary>
 		/// Gets the repository for managing ScheduledNotifications.
 		/// </summary>
-		public IBulkRepository<ScheduledNotification> ScheduledNotifications { get { return _ScheduledNotifications; } }
+		public IBulkRepository<ScheduledNotification> ScheduledNotifications { get { return _scheduledNotifications; } }
+
+		public IBulkRepository<Template> Templates { get { return _templates; } }
 	}
 }

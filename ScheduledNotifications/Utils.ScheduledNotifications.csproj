@@ -39,6 +39,10 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
+  
+  <ItemGroup>
+    <Folder Include="Exposers\" />
+  </ItemGroup>
 
 	<Import Project="..\Shared\Shared.projitems" Label="Shared" />
 

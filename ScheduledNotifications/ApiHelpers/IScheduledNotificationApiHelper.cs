@@ -9,5 +9,7 @@
 		IConnection Connection { get; }
 
 		IBulkRepository<ScheduledNotification> ScheduledNotifications { get; }
+
+		IBulkRepository<Template> Templates { get; }
 	}
 }

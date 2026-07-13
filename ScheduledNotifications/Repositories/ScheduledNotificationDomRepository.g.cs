@@ -546,10 +546,10 @@ namespace Skyline.DataMiner.Utils.ScheduledNotifications.Repositories
 					obj.Status = _status.Value;
 				}
 
-				var _templateid = _schedulednotificationpropertiesSection.GetValue<string>(Skyline.DataMiner.Utils.ScheduledNotifications.Models.ScheduledNotificationDomMapper.ScheduledNotificationProperties.TemplateId);
+				var _templateid = _schedulednotificationpropertiesSection.GetValue<System.Guid>(Skyline.DataMiner.Utils.ScheduledNotifications.Models.ScheduledNotificationDomMapper.ScheduledNotificationProperties.TemplateId);
 				if (_templateid != null)
 				{
-					obj.TemplateId = System.Guid.Parse(Convert.ToString(_templateid.Value));
+					obj.TemplateId = new Skyline.DataMiner.SDM.SdmObjectReference<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template>(Convert.ToString(_templateid.Value));
 				}
 			}
 
@@ -600,7 +600,7 @@ namespace Skyline.DataMiner.Utils.ScheduledNotifications.Repositories
 
 			if (obj.TemplateId != default)
 			{
-				_schedulednotificationproperties.AddOrUpdateValue<string>(Skyline.DataMiner.Utils.ScheduledNotifications.Models.ScheduledNotificationDomMapper.ScheduledNotificationProperties.TemplateId, Convert.ToString(obj.TemplateId));
+				_schedulednotificationproperties.AddOrUpdateValue<System.Guid>(Skyline.DataMiner.Utils.ScheduledNotifications.Models.ScheduledNotificationDomMapper.ScheduledNotificationProperties.TemplateId, System.Guid.Parse(obj.TemplateId.Identifier));
 			}
 
 			instance.Sections.Add(_schedulednotificationproperties);
@@ -630,7 +630,7 @@ namespace Skyline.DataMiner.Utils.ScheduledNotifications.Repositories
 				case "Status":
 					return new DynamicManagedListFilter<DomInstance, object>(DomInstanceExposers.FieldValues.DomInstanceField(Skyline.DataMiner.Utils.ScheduledNotifications.Models.ScheduledNotificationDomMapper.ScheduledNotificationProperties.Status), comparer, (bool)value);
 				case "TemplateId":
-					return new DynamicManagedListFilter<DomInstance, object>(DomInstanceExposers.FieldValues.DomInstanceField(Skyline.DataMiner.Utils.ScheduledNotifications.Models.ScheduledNotificationDomMapper.ScheduledNotificationProperties.TemplateId), comparer, Convert.ToString((System.Guid)value));
+					return new DynamicManagedListFilter<DomInstance, object>(DomInstanceExposers.FieldValues.DomInstanceField(Skyline.DataMiner.Utils.ScheduledNotifications.Models.ScheduledNotificationDomMapper.ScheduledNotificationProperties.TemplateId), comparer, System.Guid.Parse(Skyline.DataMiner.SDM.SdmObjectReference<Skyline.DataMiner.Utils.ScheduledNotifications.Models.Template>.Convert(value).Identifier));
 				default:
 					throw new NotImplementedException();
 			}

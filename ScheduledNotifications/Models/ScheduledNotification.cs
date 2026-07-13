@@ -49,6 +49,6 @@
 		/// <summary>
 		/// Gets or sets the template identifier associated with the notification.
 		/// </summary>
-		public Guid TemplateId { get; set; } = Guid.Empty;
+		public SdmObjectReference<Template> TemplateId { get; set; }
 	}
 }

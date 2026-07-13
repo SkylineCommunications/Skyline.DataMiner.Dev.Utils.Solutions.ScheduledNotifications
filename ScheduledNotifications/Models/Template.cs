@@ -15,18 +15,13 @@
 		public string Name { get; set; }
 
 		/// <summary>
-		/// Gets or sets the HTML file path of the template.
+		/// Gets or sets the Dashboard file path of the template.
 		/// </summary>
-		public string HtmlFilePath { get; set; }
+		public string DashboardFilePath { get; set; }
 
 		/// <summary>
 		/// Gets or sets the notification type.
 		/// </summary>
 		public string OriginSolution { get; set; }
-
-		/// <summary>
-		/// Gets or sets the processing script name of the template.
-		/// </summary>
-		public string ProcessingScriptName { get; set; }
 	}
 }

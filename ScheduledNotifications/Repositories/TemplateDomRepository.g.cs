@@ -522,22 +522,10 @@ namespace Skyline.DataMiner.Utils.ScheduledNotifications.Repositories
 					obj.Name = _name.Value;
 				}
 
-				var _htmlfilepath = _templatepropertiesSection.GetValue<string>(Skyline.DataMiner.Utils.ScheduledNotifications.Models.TemplateDomMapper.TemplateProperties.HtmlFilePath);
-				if (_htmlfilepath != null)
-				{
-					obj.HtmlFilePath = _htmlfilepath.Value;
-				}
-
 				var _originsolution = _templatepropertiesSection.GetValue<string>(Skyline.DataMiner.Utils.ScheduledNotifications.Models.TemplateDomMapper.TemplateProperties.OriginSolution);
 				if (_originsolution != null)
 				{
 					obj.OriginSolution = _originsolution.Value;
-				}
-
-				var _processingscriptname = _templatepropertiesSection.GetValue<string>(Skyline.DataMiner.Utils.ScheduledNotifications.Models.TemplateDomMapper.TemplateProperties.ProcessingScriptName);
-				if (_processingscriptname != null)
-				{
-					obj.ProcessingScriptName = _processingscriptname.Value;
 				}
 			}
 
@@ -570,19 +558,9 @@ namespace Skyline.DataMiner.Utils.ScheduledNotifications.Repositories
 				_templateproperties.AddOrUpdateValue<string>(Skyline.DataMiner.Utils.ScheduledNotifications.Models.TemplateDomMapper.TemplateProperties.Name, Convert.ToString(obj.Name));
 			}
 
-			if (obj.HtmlFilePath != default)
-			{
-				_templateproperties.AddOrUpdateValue<string>(Skyline.DataMiner.Utils.ScheduledNotifications.Models.TemplateDomMapper.TemplateProperties.HtmlFilePath, Convert.ToString(obj.HtmlFilePath));
-			}
-
 			if (obj.OriginSolution != default)
 			{
 				_templateproperties.AddOrUpdateValue<string>(Skyline.DataMiner.Utils.ScheduledNotifications.Models.TemplateDomMapper.TemplateProperties.OriginSolution, Convert.ToString(obj.OriginSolution));
-			}
-
-			if (obj.ProcessingScriptName != default)
-			{
-				_templateproperties.AddOrUpdateValue<string>(Skyline.DataMiner.Utils.ScheduledNotifications.Models.TemplateDomMapper.TemplateProperties.ProcessingScriptName, Convert.ToString(obj.ProcessingScriptName));
 			}
 
 			instance.Sections.Add(_templateproperties);
@@ -599,18 +577,10 @@ namespace Skyline.DataMiner.Utils.ScheduledNotifications.Repositories
 					return DomInstanceExposers.FieldValues.KeyExists(Skyline.DataMiner.Utils.ScheduledNotifications.Models.TemplateDomMapper.TemplateProperties.Name.Id.ToString()).Equal(comparer == Comparer.NotEquals);
 				case "Name":
 					return new DynamicManagedListFilter<DomInstance, object>(DomInstanceExposers.FieldValues.DomInstanceField(Skyline.DataMiner.Utils.ScheduledNotifications.Models.TemplateDomMapper.TemplateProperties.Name), comparer, (string)value);
-				case "HtmlFilePath" when (comparer is Comparer.Equals || comparer is Comparer.NotEquals) && value is null:
-					return DomInstanceExposers.FieldValues.KeyExists(Skyline.DataMiner.Utils.ScheduledNotifications.Models.TemplateDomMapper.TemplateProperties.HtmlFilePath.Id.ToString()).Equal(comparer == Comparer.NotEquals);
-				case "HtmlFilePath":
-					return new DynamicManagedListFilter<DomInstance, object>(DomInstanceExposers.FieldValues.DomInstanceField(Skyline.DataMiner.Utils.ScheduledNotifications.Models.TemplateDomMapper.TemplateProperties.HtmlFilePath), comparer, (string)value);
 				case "OriginSolution" when (comparer is Comparer.Equals || comparer is Comparer.NotEquals) && value is null:
 					return DomInstanceExposers.FieldValues.KeyExists(Skyline.DataMiner.Utils.ScheduledNotifications.Models.TemplateDomMapper.TemplateProperties.OriginSolution.Id.ToString()).Equal(comparer == Comparer.NotEquals);
 				case "OriginSolution":
 					return new DynamicManagedListFilter<DomInstance, object>(DomInstanceExposers.FieldValues.DomInstanceField(Skyline.DataMiner.Utils.ScheduledNotifications.Models.TemplateDomMapper.TemplateProperties.OriginSolution), comparer, (string)value);
-				case "ProcessingScriptName" when (comparer is Comparer.Equals || comparer is Comparer.NotEquals) && value is null:
-					return DomInstanceExposers.FieldValues.KeyExists(Skyline.DataMiner.Utils.ScheduledNotifications.Models.TemplateDomMapper.TemplateProperties.ProcessingScriptName.Id.ToString()).Equal(comparer == Comparer.NotEquals);
-				case "ProcessingScriptName":
-					return new DynamicManagedListFilter<DomInstance, object>(DomInstanceExposers.FieldValues.DomInstanceField(Skyline.DataMiner.Utils.ScheduledNotifications.Models.TemplateDomMapper.TemplateProperties.ProcessingScriptName), comparer, (string)value);
 				default:
 					throw new NotImplementedException();
 			}
@@ -624,12 +594,8 @@ namespace Skyline.DataMiner.Utils.ScheduledNotifications.Repositories
 					return OrderByElementFactory.Create(DomInstanceExposers.Id, sortOrder, naturalSort);
 				case "Name":
 					return OrderByElementFactory.Create(DomInstanceExposers.FieldValues.DomInstanceField(Skyline.DataMiner.Utils.ScheduledNotifications.Models.TemplateDomMapper.TemplateProperties.Name), sortOrder, naturalSort);
-				case "HtmlFilePath":
-					return OrderByElementFactory.Create(DomInstanceExposers.FieldValues.DomInstanceField(Skyline.DataMiner.Utils.ScheduledNotifications.Models.TemplateDomMapper.TemplateProperties.HtmlFilePath), sortOrder, naturalSort);
 				case "OriginSolution":
 					return OrderByElementFactory.Create(DomInstanceExposers.FieldValues.DomInstanceField(Skyline.DataMiner.Utils.ScheduledNotifications.Models.TemplateDomMapper.TemplateProperties.OriginSolution), sortOrder, naturalSort);
-				case "ProcessingScriptName":
-					return OrderByElementFactory.Create(DomInstanceExposers.FieldValues.DomInstanceField(Skyline.DataMiner.Utils.ScheduledNotifications.Models.TemplateDomMapper.TemplateProperties.ProcessingScriptName), sortOrder, naturalSort);
 				default:
 					throw new NotImplementedException();
 			}

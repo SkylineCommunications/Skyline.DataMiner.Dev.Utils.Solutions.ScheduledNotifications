@@ -26,7 +26,6 @@ namespace Skyline.DataMiner.Utils.ScheduledNotifications.Models
             public static readonly FieldDescriptorID UserEmail = new FieldDescriptorID(new Guid("81ff15ee-d774-4e93-9c58-c5994244c6a6"));
             public static readonly FieldDescriptorID ItemId = new FieldDescriptorID(new Guid("d53670bf-4bd0-4396-b388-447c5b78db81"));
             public static readonly FieldDescriptorID NotificationType = new FieldDescriptorID(new Guid("7fa81806-665a-4c1a-8cd9-5341a7c3b86e"));
-            public static readonly FieldDescriptorID StartTime = new FieldDescriptorID(new Guid("514938ca-f562-4e05-b23c-c75918b06e45"));
             public static readonly FieldDescriptorID OriginSolution = new FieldDescriptorID(new Guid("cb6e2f81-9a43-4d57-8c10-3ef7b54a9d26"));
             public static readonly FieldDescriptorID Status = new FieldDescriptorID(new Guid("91f3b8d5-2e74-4a0f-b9c3-7d1658ae42fb"));
             public static readonly FieldDescriptorID TemplateId = new FieldDescriptorID(new Guid("e28c4a7f-15d3-4b6c-84e2-f9137da5bc60"));

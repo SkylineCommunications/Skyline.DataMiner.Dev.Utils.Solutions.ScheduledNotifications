@@ -534,10 +534,22 @@ namespace Skyline.DataMiner.Utils.ScheduledNotifications.Repositories
 					obj.NotificationType = (Skyline.DataMiner.Utils.ScheduledNotifications.Models.NotificationType)_notificationtype.Value;
 				}
 
-				var _starttime = _schedulednotificationpropertiesSection.GetValue<DateTime>(Skyline.DataMiner.Utils.ScheduledNotifications.Models.ScheduledNotificationDomMapper.ScheduledNotificationProperties.StartTime);
-				if (_starttime != null)
+				var _originsolution = _schedulednotificationpropertiesSection.GetValue<string>(Skyline.DataMiner.Utils.ScheduledNotifications.Models.ScheduledNotificationDomMapper.ScheduledNotificationProperties.OriginSolution);
+				if (_originsolution != null)
 				{
-					obj.StartTime = (System.DateTime)_starttime.Value;
+					obj.OriginSolution = _originsolution.Value;
+				}
+
+				var _status = _schedulednotificationpropertiesSection.GetValue<bool>(Skyline.DataMiner.Utils.ScheduledNotifications.Models.ScheduledNotificationDomMapper.ScheduledNotificationProperties.Status);
+				if (_status != null)
+				{
+					obj.Status = _status.Value;
+				}
+
+				var _templateid = _schedulednotificationpropertiesSection.GetValue<string>(Skyline.DataMiner.Utils.ScheduledNotifications.Models.ScheduledNotificationDomMapper.ScheduledNotificationProperties.TemplateId);
+				if (_templateid != null)
+				{
+					obj.TemplateId = System.Guid.Parse(Convert.ToString(_templateid.Value));
 				}
 			}
 
@@ -558,7 +570,6 @@ namespace Skyline.DataMiner.Utils.ScheduledNotifications.Repositories
 
 			var instance = new DomInstance
 			{
-
 				DomDefinitionId = Skyline.DataMiner.Utils.ScheduledNotifications.Models.ScheduledNotificationDomMapper.DomDefinitionId,
 				ID = new DomInstanceId(id)
 				{
@@ -577,9 +588,19 @@ namespace Skyline.DataMiner.Utils.ScheduledNotifications.Repositories
 			}
 
 			_schedulednotificationproperties.AddOrUpdateValue<int>(Skyline.DataMiner.Utils.ScheduledNotifications.Models.ScheduledNotificationDomMapper.ScheduledNotificationProperties.NotificationType, (int)obj.NotificationType);
-			if (obj.StartTime != default)
+			if (obj.OriginSolution != default)
 			{
-				_schedulednotificationproperties.AddOrUpdateValue<DateTime>(Skyline.DataMiner.Utils.ScheduledNotifications.Models.ScheduledNotificationDomMapper.ScheduledNotificationProperties.StartTime, (DateTime)obj.StartTime);
+				_schedulednotificationproperties.AddOrUpdateValue<string>(Skyline.DataMiner.Utils.ScheduledNotifications.Models.ScheduledNotificationDomMapper.ScheduledNotificationProperties.OriginSolution, Convert.ToString(obj.OriginSolution));
+			}
+
+			if (obj.Status != default)
+			{
+				_schedulednotificationproperties.AddOrUpdateValue<bool>(Skyline.DataMiner.Utils.ScheduledNotifications.Models.ScheduledNotificationDomMapper.ScheduledNotificationProperties.Status, (bool)obj.Status);
+			}
+
+			if (obj.TemplateId != default)
+			{
+				_schedulednotificationproperties.AddOrUpdateValue<string>(Skyline.DataMiner.Utils.ScheduledNotifications.Models.ScheduledNotificationDomMapper.ScheduledNotificationProperties.TemplateId, Convert.ToString(obj.TemplateId));
 			}
 
 			instance.Sections.Add(_schedulednotificationproperties);
@@ -602,8 +623,14 @@ namespace Skyline.DataMiner.Utils.ScheduledNotifications.Repositories
 					return new DynamicManagedListFilter<DomInstance, object>(DomInstanceExposers.FieldValues.DomInstanceField(Skyline.DataMiner.Utils.ScheduledNotifications.Models.ScheduledNotificationDomMapper.ScheduledNotificationProperties.ItemId), comparer, (string)value);
 				case "NotificationType":
 					return new DynamicManagedListFilter<DomInstance, object>(DomInstanceExposers.FieldValues.DomInstanceField(Skyline.DataMiner.Utils.ScheduledNotifications.Models.ScheduledNotificationDomMapper.ScheduledNotificationProperties.NotificationType), comparer, (int)(Skyline.DataMiner.Utils.ScheduledNotifications.Models.NotificationType)value);
-				case "StartTime":
-					return new DynamicManagedListFilter<DomInstance, object>(DomInstanceExposers.FieldValues.DomInstanceField(Skyline.DataMiner.Utils.ScheduledNotifications.Models.ScheduledNotificationDomMapper.ScheduledNotificationProperties.StartTime), comparer, (DateTime)(System.DateTime)value);
+				case "OriginSolution" when (comparer is Comparer.Equals || comparer is Comparer.NotEquals) && value is null:
+					return DomInstanceExposers.FieldValues.KeyExists(Skyline.DataMiner.Utils.ScheduledNotifications.Models.ScheduledNotificationDomMapper.ScheduledNotificationProperties.OriginSolution.Id.ToString()).Equal(comparer == Comparer.NotEquals);
+				case "OriginSolution":
+					return new DynamicManagedListFilter<DomInstance, object>(DomInstanceExposers.FieldValues.DomInstanceField(Skyline.DataMiner.Utils.ScheduledNotifications.Models.ScheduledNotificationDomMapper.ScheduledNotificationProperties.OriginSolution), comparer, (string)value);
+				case "Status":
+					return new DynamicManagedListFilter<DomInstance, object>(DomInstanceExposers.FieldValues.DomInstanceField(Skyline.DataMiner.Utils.ScheduledNotifications.Models.ScheduledNotificationDomMapper.ScheduledNotificationProperties.Status), comparer, (bool)value);
+				case "TemplateId":
+					return new DynamicManagedListFilter<DomInstance, object>(DomInstanceExposers.FieldValues.DomInstanceField(Skyline.DataMiner.Utils.ScheduledNotifications.Models.ScheduledNotificationDomMapper.ScheduledNotificationProperties.TemplateId), comparer, Convert.ToString((System.Guid)value));
 				default:
 					throw new NotImplementedException();
 			}
@@ -621,8 +648,12 @@ namespace Skyline.DataMiner.Utils.ScheduledNotifications.Repositories
 					return OrderByElementFactory.Create(DomInstanceExposers.FieldValues.DomInstanceField(Skyline.DataMiner.Utils.ScheduledNotifications.Models.ScheduledNotificationDomMapper.ScheduledNotificationProperties.ItemId), sortOrder, naturalSort);
 				case "NotificationType":
 					return OrderByElementFactory.Create(DomInstanceExposers.FieldValues.DomInstanceField(Skyline.DataMiner.Utils.ScheduledNotifications.Models.ScheduledNotificationDomMapper.ScheduledNotificationProperties.NotificationType), sortOrder, naturalSort);
-				case "StartTime":
-					return OrderByElementFactory.Create(DomInstanceExposers.FieldValues.DomInstanceField(Skyline.DataMiner.Utils.ScheduledNotifications.Models.ScheduledNotificationDomMapper.ScheduledNotificationProperties.StartTime), sortOrder, naturalSort);
+				case "OriginSolution":
+					return OrderByElementFactory.Create(DomInstanceExposers.FieldValues.DomInstanceField(Skyline.DataMiner.Utils.ScheduledNotifications.Models.ScheduledNotificationDomMapper.ScheduledNotificationProperties.OriginSolution), sortOrder, naturalSort);
+				case "Status":
+					return OrderByElementFactory.Create(DomInstanceExposers.FieldValues.DomInstanceField(Skyline.DataMiner.Utils.ScheduledNotifications.Models.ScheduledNotificationDomMapper.ScheduledNotificationProperties.Status), sortOrder, naturalSort);
+				case "TemplateId":
+					return OrderByElementFactory.Create(DomInstanceExposers.FieldValues.DomInstanceField(Skyline.DataMiner.Utils.ScheduledNotifications.Models.ScheduledNotificationDomMapper.ScheduledNotificationProperties.TemplateId), sortOrder, naturalSort);
 				default:
 					throw new NotImplementedException();
 			}

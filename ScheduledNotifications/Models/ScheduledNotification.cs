@@ -9,7 +9,6 @@
 	/// </summary>
 	public enum NotificationType
 	{
-		Instant,
 		Daily,
 		Weekly,
 		Monthly,
@@ -36,11 +35,6 @@
 		/// Gets or sets the notification type.
 		/// </summary>
 		public NotificationType NotificationType { get; set; }
-
-		/// <summary>
-		/// Gets or sets the start time of the notification.
-		/// </summary>
-		public DateTime StartTime { get; set; }
 
 		/// <summary>
 		/// Gets or sets the origin solution of the notification.

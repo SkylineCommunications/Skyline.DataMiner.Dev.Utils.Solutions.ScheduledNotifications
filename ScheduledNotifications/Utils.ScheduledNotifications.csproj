@@ -6,8 +6,9 @@
     <AssemblyName>Skyline.DataMiner.Dev.Utils.Solutions.ScheduledNotifications</AssemblyName>
     <RootNamespace>Skyline.DataMiner.Dev.Utils.Solutions.ScheduledNotifications</RootNamespace>
 	 <PackageId>Skyline.DataMiner.Dev.Utils.Solutions.ScheduledNotifications</PackageId>
-	 <PackageVersion>1.0.4-refactored</PackageVersion>
-    <Version>1.0.4-refactored</Version>
+	 <PackageVersion>1.0.4-dsav1</PackageVersion>
+    <Version>1.0.4-dsav1</Version>
+	  <AssemblyVersion>1.0.4.3</AssemblyVersion>
     <PackageTags>Skyline;DataMiner</PackageTags>
     <PackageProjectUrl>https://skyline.be</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>

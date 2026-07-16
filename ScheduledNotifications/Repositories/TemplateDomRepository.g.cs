@@ -522,6 +522,12 @@ namespace Skyline.DataMiner.Utils.ScheduledNotifications.Repositories
 					obj.Name = _name.Value;
 				}
 
+				var _dashboardfilepath = _templatepropertiesSection.GetValue<string>(Skyline.DataMiner.Utils.ScheduledNotifications.Models.TemplateDomMapper.TemplateProperties.DashboardFilePath);
+				if (_dashboardfilepath != null)
+				{
+					obj.DashboardFilePath = _dashboardfilepath.Value;
+				}
+
 				var _originsolution = _templatepropertiesSection.GetValue<string>(Skyline.DataMiner.Utils.ScheduledNotifications.Models.TemplateDomMapper.TemplateProperties.OriginSolution);
 				if (_originsolution != null)
 				{
@@ -558,6 +564,11 @@ namespace Skyline.DataMiner.Utils.ScheduledNotifications.Repositories
 				_templateproperties.AddOrUpdateValue<string>(Skyline.DataMiner.Utils.ScheduledNotifications.Models.TemplateDomMapper.TemplateProperties.Name, Convert.ToString(obj.Name));
 			}
 
+			if (obj.DashboardFilePath != default)
+			{
+				_templateproperties.AddOrUpdateValue<string>(Skyline.DataMiner.Utils.ScheduledNotifications.Models.TemplateDomMapper.TemplateProperties.DashboardFilePath, Convert.ToString(obj.DashboardFilePath));
+			}
+
 			if (obj.OriginSolution != default)
 			{
 				_templateproperties.AddOrUpdateValue<string>(Skyline.DataMiner.Utils.ScheduledNotifications.Models.TemplateDomMapper.TemplateProperties.OriginSolution, Convert.ToString(obj.OriginSolution));
@@ -577,6 +588,10 @@ namespace Skyline.DataMiner.Utils.ScheduledNotifications.Repositories
 					return DomInstanceExposers.FieldValues.KeyExists(Skyline.DataMiner.Utils.ScheduledNotifications.Models.TemplateDomMapper.TemplateProperties.Name.Id.ToString()).Equal(comparer == Comparer.NotEquals);
 				case "Name":
 					return new DynamicManagedListFilter<DomInstance, object>(DomInstanceExposers.FieldValues.DomInstanceField(Skyline.DataMiner.Utils.ScheduledNotifications.Models.TemplateDomMapper.TemplateProperties.Name), comparer, (string)value);
+				case "DashboardFilePath" when (comparer is Comparer.Equals || comparer is Comparer.NotEquals) && value is null:
+					return DomInstanceExposers.FieldValues.KeyExists(Skyline.DataMiner.Utils.ScheduledNotifications.Models.TemplateDomMapper.TemplateProperties.DashboardFilePath.Id.ToString()).Equal(comparer == Comparer.NotEquals);
+				case "DashboardFilePath":
+					return new DynamicManagedListFilter<DomInstance, object>(DomInstanceExposers.FieldValues.DomInstanceField(Skyline.DataMiner.Utils.ScheduledNotifications.Models.TemplateDomMapper.TemplateProperties.DashboardFilePath), comparer, (string)value);
 				case "OriginSolution" when (comparer is Comparer.Equals || comparer is Comparer.NotEquals) && value is null:
 					return DomInstanceExposers.FieldValues.KeyExists(Skyline.DataMiner.Utils.ScheduledNotifications.Models.TemplateDomMapper.TemplateProperties.OriginSolution.Id.ToString()).Equal(comparer == Comparer.NotEquals);
 				case "OriginSolution":
@@ -594,6 +609,8 @@ namespace Skyline.DataMiner.Utils.ScheduledNotifications.Repositories
 					return OrderByElementFactory.Create(DomInstanceExposers.Id, sortOrder, naturalSort);
 				case "Name":
 					return OrderByElementFactory.Create(DomInstanceExposers.FieldValues.DomInstanceField(Skyline.DataMiner.Utils.ScheduledNotifications.Models.TemplateDomMapper.TemplateProperties.Name), sortOrder, naturalSort);
+				case "DashboardFilePath":
+					return OrderByElementFactory.Create(DomInstanceExposers.FieldValues.DomInstanceField(Skyline.DataMiner.Utils.ScheduledNotifications.Models.TemplateDomMapper.TemplateProperties.DashboardFilePath), sortOrder, naturalSort);
 				case "OriginSolution":
 					return OrderByElementFactory.Create(DomInstanceExposers.FieldValues.DomInstanceField(Skyline.DataMiner.Utils.ScheduledNotifications.Models.TemplateDomMapper.TemplateProperties.OriginSolution), sortOrder, naturalSort);
 				default:
